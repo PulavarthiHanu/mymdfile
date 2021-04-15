@@ -11,7 +11,7 @@ Resource being detected for Pod deployment:](#itpned2500-Acceptance-installation
   -
  - ITP/NED/01/01: Deploy K8s Master Using Converged Edge Experience Kits
  - TP/NED/01/02: Deploy K8s Worker Using Converged Edge Experience Kits
- - [Test Summary](#test-summary)
+  [Test Summary](#test-summary)
   - [Prerequisites](#prerequisites)
   - [Test Steps](#test-steps)
  - Deploy 1 controller and 2 node cluster with node selector specified to feature one if edge node
