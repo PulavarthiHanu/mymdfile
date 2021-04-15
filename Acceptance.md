@@ -4,7 +4,7 @@ Copyright © 2020 Intel Corporation
 ```
 [ITP/NED/01/01: Acceptance Test ](#itpned35-Acceptance-Test)
 ITP/NED/01/01: Deploy application in a multi node cluster with nodeSelector specified to feature one of edge node
-Resource being detected for Pod deployment:](#itpned2500-opc-package-installation)
+Resource being detected for Pod deployment:](#itpned2500-Acceptance-installation)
  -[Test Summary](#test-summary)
  - [Prerequisites](#prerequisites)
  - [Test Steps](#test-steps)
@@ -72,6 +72,29 @@ sriov:
 - for pod A flannel interface to pod B flannel interface 
 - Now sent traffic by using iperf from pod A sriov interface to pod B  sriov  interface 
 
+[ITP/NED/35: Acceptance Test](#itpned35-Acceptance-Test)
+Verify deployment of pod with 3 Interfaces –  
+-Default,  
+-	SR-IOV1  to use Net/kernel Interface and 
+-	SR-IOV 2 to use DPDK. 
+-	Test Steps
+
+ -Deploy minimal deployment with 2 host cluster 
+ - Add some node’s SR-IOV capable network interfaces to the node config file 
+sriov:
+  -network_interfaces: {ens787f0: 3}
+   -On the node bind the SRIOV VF port to dpdk vfio driver.
+   -Bind the SRIOV VF interface created during the deploy
+  -[root@node01]# /opt/openness/dpdk-19.11.1/usertools/dpdk-devbind.py -b vfio-pci af:0a.0 af:0a.1
+   -verify interfaces are binded properly 
+  
+  -output looks like
+  - Network devices using DPDK-compatible driver
+   ============================================
+   -0000:af:0a.0 'Ethernet Virtual Function 700 Series 154c' drv=vfio-pci unused=i40evf,igb_uio
+   -0000:af:0a.1 'Ethernet Virtual Function 700 Series 154c' drv=vfio-pci unused=i40evf,igb_uio
+   -6) Restarting the sriov-device-plugin Pod on Edge Node(s)
+   -Perform the following steps on controller node to enable the intel_sriov_dpdk network interface needed for the VPP.
 
 
 
