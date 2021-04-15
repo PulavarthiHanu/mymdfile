@@ -88,7 +88,7 @@ sriov:
   -[root@node01]# /opt/openness/dpdk-19.11.1/usertools/dpdk-devbind.py -b vfio-pci af:0a.0 af:0a.1
    -verify interfaces are binded properly 
   
-  -output looks like
+  output looks like
   - Network devices using DPDK-compatible driver
    ============================================
    -0000:af:0a.0 'Ethernet Virtual Function 700 Series 154c' drv=vfio-pci unused=i40evf,igb_uio
