@@ -6,7 +6,7 @@ Copyright © 2020 Intel Corporation
 ITP/NED/01/01: Deploy application in a multi node cluster with nodeSelector specified to feature one of edge node
 Resource being detected for Pod deployment:](#itpned2500-Acceptance-installation)
 
- -[Test Summary](#test-summary)
+ [Test Summary](#test-summary)
   -[Prerequisites](#prerequisites)
   -[Test Steps](#test-steps)
   -
